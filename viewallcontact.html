@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ViewContact</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html,body{
+            height: 100%;
+            width: 100%;
+        }
+        table,td,th,tr{
+            color: #fff;
+            background-color: #000;
+            border: 2px solid rgb(255, 0, 136);
+            font-size: 136%;
+            
+        }
+        #delete{
+            display: none;
+        }
+        #i1{
+
+            width: 100%;
+            font-size: 180%;
+            background-color:darkred;
+            cursor: pointer;
+            color:#fff;
+        }
+        #f1{
+            height: 50%;
+            width: 30%;
+            
+        }
+        #s1{
+            width: 100%;
+            color: #fff;
+            font-size: 180%;
+            background-color: darkcyan;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>C_id</th>
+            <th>C_name</th>
+            <th>C_number</th>
+            <th>C_email</th>
+            <th>C_address</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+        {% for i in data %}
+        <tr>
+            <td>{{ i.C_id }}</td>
+            <td>{{ i.C_name }}</td>
+            <td>{{ i.C_number }}</td>
+            <td>{{ i.C_email }}</td>
+            <td>{{ i.C_address }}</td>
+            <td>
+                <button>
+                    <details>
+                        <summary id="s1">Update</summary >
+                        <form id="f1" action="/updatecontact" method="GET">
+                            <h1>UPDATECONTACT</h1>
+                            <h3>C_id:</h3>
+                            <input type="number" name="uC_id" value="{{ i.C_id }}" required >
+                            <br>
+
+                            <h3>C_name:</h3>
+                            <input type="text" name="uC_name" value="{{ i.C_name }}" required>
+                            <br>
+
+                            <h3>C_number:</h3>
+                            <input type="number" name="uC_number" value="{{ i.C_number}}" required>
+                            <br>
+
+                           <h3>C_email:</h3>
+                           <input type="email" name="uC_email" value="{{ i.C_email }}" required>
+                           <br>
+
+                           <h3>C_address:</h3>
+                           <input type="text" name="uC_address" value="{{ i.C_address }}" required>
+
+                           <br><br><br>
+
+                           <input type="submit" value="UPDATECONTACT">
+
+
+                        </form>
+                    </details>
+                </button>
+            </td>
+            <td>
+                <button>
+                    <form action="/deletecontact" method="GET">
+                        <input id="delete" type="number" name="uC_id" value="{{ i.C_id }}" >
+                        <input id="i1" type="submit" value="Delete">
+                    </form>
+                </button>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

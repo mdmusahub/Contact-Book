@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ContactInfo</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html,body{
+            height: 100%;
+            width: 100%;
+            background-color:darkcyan;
+
+        }
+        form{
+            
+            height: 80%;
+            width: 30%;
+            border-radius: 2%;
+            background-color:aliceblue;
+            border-radius: solid black 2px;
+            padding: 0.5%;
+            text-align: center;
+        }
+        #div1{
+            display: flex;
+            justify-content: space-around;
+            background-color:darkcyan;
+            padding: 3%;
+            margin-top: 10%;
+        }
+        #i1{
+            padding: 1%;
+            text-align: center;
+            cursor: pointer;
+        }
+        button{
+            font-size: 250%;
+             
+        }
+        
+    </style>
+</head>
+<body>
+    <nav>
+
+    </nav>
+    <div id="div1"> 
+        <h1>CONTACT BOOK</h1>
+        <form action="/addcontact" method="GET">
+            
+            <h1>ADDCONTACT</h1>
+
+            <h3>C_id:</h3>
+            <input type="number" name="C_id"  >
+            <br>
+
+            <h3>C_name:</h3>
+            <input type="text" name="C_name" required>
+            <br>
+
+            <h3>C_number:</h3>
+            <input type="number" name="C_number" required>
+            <br>
+
+            <h3>C_email:</h3>
+            <input type="email" name="C_email" required>
+            <br>
+
+            <h3>C_address:</h3>
+            <input type="text" name="C_address" required>
+            <br><br><br>
+
+
+            <input id="i1" type="submit" value="ADDCONTACT">
+
+    
+        </form>
+
+        <br><br><br>
+        <br><br><br>
+
+        <a href="/viewallcontact"><button>VIEW ALL CONTACT</button></a>
+          
+        <br><br><br>
+        <br><br><br>
+
+
+    </div>
+</body>
+</html>
